@@ -1,9 +1,14 @@
 require "sinatra"
 require "sinatra/reloader"
+require "dotenv/load"
+require "http"
+
+exchange = ENV.fetch("EXCHANGE_KEY")
+exchange_rate = "https://api.exchangerate.host/list?access_key=#{exchange}"
 
 get("/") do
-  "
-  <h1>Welcome to your Sinatra App!</h1>
-  <p>Define some routes in app.rb</p>
-  "
+  raw = HTTP.get(exchange_rate).to_s
+  formated = JSON.parse(raw)
+  @list_data = formated.fetch("currencies")
+  erb :index
 end
