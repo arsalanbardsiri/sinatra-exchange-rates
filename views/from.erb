@@ -1,15 +1,14 @@
 <nav>
-  <a href="/">← Go back</a>
+  <a href="/">back</a>
 </nav>
 
-<h2>Convert <%= @from %></h2>
-<p class="contrast">Pick a target currency:</p>
+<h1>Convert <%= @from %></h1>
 
 <ul>
   <% @targets.each do |to| %>
     <li>
       <a href="/<%= @from %>/<%= to %>">
-        Convert 1 <strong><%= @from %></strong> to <strong><%= to %></strong>…
+        Convert 1 <%= @from %> to <%= to %>...
       </a>
     </li>
   <% end %>

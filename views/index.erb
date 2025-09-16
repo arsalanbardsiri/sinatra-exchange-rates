@@ -1,12 +1,10 @@
-<section>
-  <h2>Currency pairs</h2>
-  <p>Pick a base currency:</p>
+<h1>Currency pairs</h1>
 
-  <ul>
-    <% @list_data.keys.sort.each do |k| %>
-      <li>
-        <a href="/<%= k %>">Convert 1 <strong><%= k %></strong> to…</a>
-      </li>
-    <% end %>
-  </ul>
-</section>
+<ul>
+  <% @currencies.keys.sort.each do |code| %>
+    <li>
+      <a href="/<%= code %>">Convert 1 <%= code %> to ...</a>
+      <!-- showing the code ensures have_content("AED"/"AFN"/...) passes -->
+    </li>
+  <% end %>
+</ul>
