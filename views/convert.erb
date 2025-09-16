@@ -1,0 +1,19 @@
+<p>
+<% @rate %>
+</p>
+
+<nav>
+  <a href="/<%= @from %>">← Go back</a>
+  <a href="/" style="margin-left: 1rem;">Home</a>
+</nav>
+
+<h2>Convert <%= @from %> to <%= @to %></h2>
+
+<p>
+  1 <strong><%= @from %></strong> equals
+  <strong><%= sprintf("%.6f", @rate.to_f) %> <%= @to %></strong>.
+</p>
+
+<p class="contrast">
+  <%= @list_data[@from] %> → <%= @list_data[@to] %>
+</p>
