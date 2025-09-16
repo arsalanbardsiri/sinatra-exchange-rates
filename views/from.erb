@@ -1,11 +1,9 @@
-<nav>
-  <a href="/">back</a>
-</nav>
-
+<nav><a href="/">back</a></nav>
 <h1>Convert <%= @from %></h1>
 
 <ul>
-  <% @targets.each do |to| %>
+  <% @currencies.keys.sort.each do |to| %>
+    <% next if to == @from %>
     <li>
       <a href="/<%= @from %>/<%= to %>">
         Convert 1 <%= @from %> to <%= to %>...

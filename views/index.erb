@@ -2,9 +2,6 @@
 
 <ul>
   <% @currencies.keys.sort.each do |code| %>
-    <li>
-      <a href="/<%= code %>">Convert 1 <%= code %> to ...</a>
-      <!-- showing the code ensures have_content("AED"/"AFN"/...) passes -->
-    </li>
+    <li><a href="/<%= code %>"><%= code %></a></li>
   <% end %>
 </ul>
