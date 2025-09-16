@@ -30,6 +30,7 @@ get("/:from") do
     halt 404, "Unknown currency code: #{@from}"
   end
 
+  #since 1 == 1 why not remove it?
   @targets = @list_data.keys.reject { |k| k == @from }.sort
 
   erb :from
